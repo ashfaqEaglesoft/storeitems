@@ -1,10 +1,11 @@
+// Bug free code by Eaglesoft  
 #include<iostream>
 using namespace std;
 class shop{
-    int serial=1;
     int itemId[50];
     int itemPrice[50];
     int totalProducts=0;
+    int i=0;
     public:
         void getItem(void);
         void displayItem(void);
@@ -14,8 +15,8 @@ void shop :: getItem(void){
     int productQuantity;
     cout<<"How much products you want to add:"<<endl;
     cin>>productQuantity;
-    totalProducts +=productQuantity;
-    for(int i=0;i<productQuantity;i++)
+    totalProducts =totalProducts + productQuantity;
+    for(i;i<totalProducts;i++)
     {
         cout<<"Enter product ID : "<<endl;
         cin>>itemId[i];
@@ -26,9 +27,9 @@ void shop :: getItem(void){
 
 void shop :: displayItem(void){
         cout<<"*******************Items Details are here*******************"<<endl;
-    for(int i=0;i<totalProducts;i++){
-        cout<<"Serial No.#"<<serial++<<endl;
-        cout<<"Product ID : "<<itemId[i]<<" And price is : "<<itemPrice[i]<<endl;
+    for(int j=0;j<totalProducts;j++){
+        cout<<"Serial No.#"<<j+1<<endl;
+        cout<<"Product ID : "<<itemId[j]<<" And price is : "<<itemPrice[j]<<endl;
     }
 }
 
